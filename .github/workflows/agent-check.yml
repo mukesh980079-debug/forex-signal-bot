@@ -15,4 +15,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements-agent.txt
       - name: Check Python syntax
-        run: python -m py_compile agent.py
+        run: python -m py_compile agent.py tests/check_public_data.py
+      - name: Check public Binance BTC data connection
+        run: python tests/check_public_data.py
